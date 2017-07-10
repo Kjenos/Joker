@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Joker</string>
+    <string name="title_home">Home</string>
+    <string name="title_Category">Kategorie</string>
+    <string name="title_add">Neu</string>
+    <string name="title_favourite">Favoriten</string>
+    <string name="title_profile">Profil</string>
+
+    <string name="settings">Einstellungen</string>
+    <string name="Top">Top</string>
+    <string name="Trend">Trend</string>
+    <string name="New">Neu</string>
+    <string name="Abo">Abo</string>
+
+</resources>

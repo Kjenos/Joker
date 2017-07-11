@@ -18,6 +18,7 @@ import ch.kr.app.joker.fragment.TabTopFragment;
 import ch.kr.app.joker.fragment.TabTrendFragment;
 import ch.kr.app.joker.fragment.categoryFragment;
 import ch.kr.app.joker.fragment.homeFragment;
+import ch.kr.app.joker.fragment.profileFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
         adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
         adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
-        adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
+        adapter.addFragment(new profileFragment(), getString(R.string.title_profile));
         NavigationViewPager.setAdapter(adapter);
     }
 

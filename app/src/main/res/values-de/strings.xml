@@ -13,4 +13,11 @@
     <string name="New">Neu</string>
     <string name="Abo">Abo</string>
 
+    <string name="EditProfilButton">Bearbeiten</string>
+    <string name="Followers">Followers</string>
+    <string name="Following">Following</string>
+    <string name="Username">Benutzername:</string>
+    <string name="Rank">Rang:</string>
+    <string name="Since">Seit:</string>
+    <string name="Description">Beschreibung:</string>
 </resources>

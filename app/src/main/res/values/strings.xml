@@ -11,4 +11,12 @@
     <string name="Trend">Trend</string>
     <string name="New">New</string>
     <string name="Abo">Abo</string>
+
+    <string name="EditProfilButton">Edit</string>
+    <string name="Followers">Followers</string>
+    <string name="Following">Following</string>
+    <string name="Username">Username:</string>
+    <string name="Rank">Rank:</string>
+    <string name="Since">Since:</string>
+    <string name="Description">Description:</string>
 </resources>

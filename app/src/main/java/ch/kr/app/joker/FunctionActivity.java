@@ -7,7 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * Created by User on 10.07.2017.
+ * Created by Kjenos on 10.07.2017.
  */
 
 public class FunctionActivity extends AppCompatActivity {
@@ -29,7 +29,7 @@ public class FunctionActivity extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
-        bottomNavigationView.getMenu().findItem(R.id.navigation_categorie).setChecked(true);
+        bottomNavigationView.getMenu().findItem(R.id.navigation_category).setChecked(true);
     }
 
     private void selectMenuItem(int menu) {

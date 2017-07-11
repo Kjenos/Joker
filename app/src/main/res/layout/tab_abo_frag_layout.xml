@@ -5,4 +5,11 @@
     android:layout_height="fill_parent"
     android:background="#0099FF"
     >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="abo" />
 </LinearLayout>

@@ -1,10 +1,13 @@
 package ch.kr.app.joker;
 
+import android.app.Fragment;
 import android.app.TabActivity;
 import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenu;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -26,31 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private SectionsPageAdapter mSectionsPageAdapter;
     private ViewPager mViewPager;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    private BottomNavigationView bottomNavigationView;
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_categorie:
-                    mTextMessage.setText(R.string.title_Category);
-                    return true;
-                case R.id.navigation_add:
-                    mTextMessage.setText(R.string.title_add);
-                    return true;
-                case R.id.navigation_favorite:
-                    mTextMessage.setText(R.string.title_favourite);
-                    return true;
-                case R.id.navigation_profil:
-                    mTextMessage.setText(R.string.title_profile);
-            }
-            return false;
-        }
 
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,33 +39,68 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.d(TAG, "onCreate: Starting.");
+
+
+
+        final ViewPager NavigationViewPager = (ViewPager)findViewById(R.id.fragmentView);
+        NavigationViewPager.setOffscreenPageLimit(5);
         mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
 
-        mViewPager = (ViewPager)findViewById(R.id.viewContainer);
-        setupViewPager(mViewPager);
+        //mViewPager = (ViewPager)findViewById(R.id.viewContainer);
+        setupNavigationViewPager(NavigationViewPager);
+        //TabLayout tabLayout = (TabLayout)findViewById(R.id.tabs);
+        //tabLayout.setupWithViewPager(mViewPager);
 
-        TabLayout tabLayout = (TabLayout)findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(mViewPager);
+        /*mNavigationPageAdapter = new NavigationPageAdapter(getSupportFragmentManager());
 
-        //mTextMessage = (TextView) findViewById(R.id.message);
+        mNavigationViewPager = (ViewPager)findViewById(R.id.fragmentView);
+        setupNavigationViewPager(mNavigationViewPager);*/
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        View category = (View) findViewById(R.id.navigation_categorie);
-        category.setOnClickListener(new View.OnClickListener() {
+        bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                opencategory();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.navigation_home:
+                        NavigationViewPager.setCurrentItem(0);
+                        break;
+                    case R.id.navigation_category:
+                        NavigationViewPager.setCurrentItem(1);
+                        break;
+                    case R.id.navigation_add:
+                        NavigationViewPager.setCurrentItem(2);
+                        break;
+                    case R.id.navigation_favorite:
+                        NavigationViewPager.setCurrentItem(3);
+                        break;
+                    case R.id.navigation_profil:
+                        NavigationViewPager.setCurrentItem(4);
+                        break;
+                }
+                return true;
             }
         });
+
+
     }
 
-    private void opencategory() {
-        Intent intent = new Intent(this, FunctionActivity.class);
-        intent.putExtra(MENU, 1);
-        startActivity(intent);
+    private void setupNavigationViewPager(ViewPager NavigationViewPager) {
+        SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
+        adapter.addFragment(new homeFragment(), getString(R.string.title_home));
+        adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
+        adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
+        adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
+        adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
+        NavigationViewPager.setAdapter(adapter);
     }
+
+    /*private void setupNavigationViewPager(ViewPager mNavigationViewPager) {
+        NavigationPageAdapter adapter = new NavigationPageAdapter(getSupportFragmentManager());
+        adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
+        adapter.addFragment(new categoryFragment(), getString(R.string.title_Category));
+        mNavigationViewPager.setAdapter(adapter);
+    }*/
 
 
     private void setupViewPager(ViewPager viewPager){

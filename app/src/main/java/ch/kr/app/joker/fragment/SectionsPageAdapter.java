@@ -1,4 +1,4 @@
-package ch.kr.app.joker;
+package ch.kr.app.joker.fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,7 +11,7 @@ import java.util.List;
  * Created by User on 10.07.2017.
  */
 
-class SectionsPageAdapter extends FragmentPagerAdapter{
+public class SectionsPageAdapter extends FragmentPagerAdapter{
 
     private final List<Fragment> mfragmentList = new ArrayList<>();
     private final List<String> mfragmentTitleList = new ArrayList<>();

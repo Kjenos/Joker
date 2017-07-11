@@ -1,25 +1,23 @@
 package ch.kr.app.joker;
 
-import android.app.Fragment;
-import android.app.TabActivity;
-import android.content.ClipData;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
-import android.support.design.internal.BottomNavigationMenu;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TabHost;
 import android.widget.TextView;
+
+import ch.kr.app.joker.fragment.SectionsPageAdapter;
+import ch.kr.app.joker.fragment.TabAboFragment;
+import ch.kr.app.joker.fragment.TabNewFragment;
+import ch.kr.app.joker.fragment.TabTopFragment;
+import ch.kr.app.joker.fragment.TabTrendFragment;
+import ch.kr.app.joker.fragment.categoryFragment;
+import ch.kr.app.joker.fragment.homeFragment;
 
 public class MainActivity extends AppCompatActivity {
 

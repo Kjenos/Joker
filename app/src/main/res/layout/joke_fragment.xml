@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.85">
+
+        <TextView
+                android:id="@+id/jokeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="TextView" />
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/upvoteJokeimageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/coloerWhite"
+            app:srcCompat="@drawable/ic_upvote_arrow" />
+        <ImageButton
+                android:id="@+id/downvoteJokeimageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/coloerWhite"
+                app:srcCompat="@drawable/ic_downvote_arrow" />
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
